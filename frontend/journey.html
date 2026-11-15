@@ -324,7 +324,7 @@
 
             try { // Starts error handling
 
-                const res = await fetch('http://localhost:3000/api/journeys'); // Requests community journeys from the backend
+                const res = await fetch('https://traceng-api.onrender.com/api/journeys'); // Requests community journeys from the backend
 
                 if (!res.ok) { // Checks whether the server responded successfully
                     throw new Error('Could not fetch community journeys'); // Creates an error if the request failed

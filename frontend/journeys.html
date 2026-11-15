@@ -157,7 +157,7 @@
             const container = document.getElementById('journeysContainer');
 
             try {
-                const response = await fetch('http://localhost:5000/api/journeys');
+                const response = await fetch('https://traceng-api.onrender.com/api/journeys');
                 const journeys = await response.json();
 
                 if (journeys.length === 0) {

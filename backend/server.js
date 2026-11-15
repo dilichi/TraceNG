@@ -54,7 +54,8 @@ const allowedOrigins = [
   'http://localhost:5000',      // local dev (served by this same server)
   'http://localhost:5500',      // VS Code Live Server
   'http://127.0.0.1:5500',
-  'https://traceng.vercel.app', // update to your real Vercel/Netlify URL after deploy
+  'https://traceng.vercel.app', 
+  'https://earnest-nougat-d808dc.netlify.app' // <-- YOUR NETLIFY URL IS HERE
 ];
 
 app.use(

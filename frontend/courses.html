@@ -1,0 +1,412 @@
+<!DOCTYPE html> <!-- Tells the browser this is an HTML5 page -->
+<html lang="en"> <!-- Sets the page language to English -->
+
+<head> <!-- Starts the page settings -->
+  <meta charset="UTF-8"> <!-- Supports different characters -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Makes the page responsive -->
+
+  <title>Pick your course | TraceNG</title> <!-- Browser tab title -->
+
+  <!-- Loads Bootstrap 5 styles -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Loads your existing stylesheet -->
+  <link href="css/index.css" rel="stylesheet">
+ 
+
+  <style>
+    /* Sets the overall page appearance */
+    body {
+      background: #050c19;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Controls the navbar appearance */
+    .navbar {
+      background: #050c19;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Keeps navbar content aligned with the reference */
+    .navbar .container {
+      max-width: 1600px;
+    }
+
+    /* Creates the small blue logo symbol */
+    .logo-mark {
+      width: 56px;
+      height: 36px;
+      background: #0875f9;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      position: relative;
+    }
+
+    /* Creates the glowing dot inside the logo */
+    .logo-mark::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      background: #ff3d70;
+      border-radius: 50%;
+      position: absolute;
+      top: 3px;
+      box-shadow: 0 0 10px rgba(255, 61, 112, 0.6);
+    }
+
+    /* Creates the vertical line inside the logo */
+    .logo-mark::after {
+      content: "";
+      width: 2px;
+      height: 13px;
+      background: #ffffff;
+      position: absolute;
+      top: 14px;
+    }
+
+    /* Styles the TraceNG brand name */
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      color: #ffffff !important;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    /* Styles the NG part of the logo */
+    .brand-blue {
+      color: #28b9f2;
+    }
+
+    /* Styles the navbar links */
+    .nav-link {
+      color: #cbd5e1 !important;
+      font-size: 16px;
+      font-weight: 600;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+
+    /* Changes the link colour when hovered */
+    .nav-link:hover {
+      color: #ffffff !important;
+    }
+
+    /* Highlights the current page link */
+    .nav-link.active {
+      color: #ffffff !important;
+    }
+
+    /* Adds the small blue active indicator */
+    .nav-link.active::after {
+      content: "";
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      background: #28b9f2;
+      border-radius: 50%;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Styles the Get Started button */
+    .get-started {
+      background: #086bfa;
+      color: #ffffff;
+      border: none;
+      border-radius: 12px;
+      padding: 13px 24px;
+      font-weight: 700;
+      transition: background 0.2s ease;
+    }
+
+    /* Adds a hover effect to the button */
+    .get-started:hover {
+      background: #0059d6;
+      color: #ffffff;
+    }
+
+    /* Controls the main page width */
+    main {
+      max-width: 1500px !important;
+      min-height: 80vh;
+    }
+
+    /* Styles the small heading above the main title */
+    .section-label {
+      color: #28b9f2;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    /* Adds the small line beside the section label */
+    .section-label::before {
+      content: "";
+      width: 32px;
+      height: 2px;
+      background: #28b9f2;
+    }
+
+    /* Styles the main heading */
+    .page-heading {
+      font-size: clamp(38px, 5vw, 64px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      max-width: 750px;
+    }
+
+    /* Highlights selected words in blue */
+    .heading-blue {
+      color: #28b9f2;
+    }
+
+    /* Styles the supporting description */
+    .page-description {
+      color: #91a4c3;
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 650px;
+    }
+
+    /* Styles the search input */
+    #searchBox {
+      background: #091326;
+      color: #ffffff;
+      border: 1px solid #1c2a42;
+      border-radius: 13px;
+      padding: 17px 20px;
+      font-size: 16px;
+      box-shadow: none;
+    }
+
+    /* Styles the search placeholder */
+    #searchBox::placeholder {
+      color: #637895;
+    }
+
+    /* Adds a blue border when the search box is selected */
+    #searchBox:focus {
+      border-color: #0875f9;
+      box-shadow: 0 0 0 3px rgba(8, 117, 249, 0.12);
+    }
+
+    /* Gives the generated course cards a matching dark appearance */
+    #courseGrid .card,
+    #courseGrid .course-card {
+      background: #0c172b !important;
+      color: #ffffff !important;
+      border: 1px solid #1c2a42 !important;
+      border-radius: 18px !important;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    /* Adds a subtle hover effect to course cards */
+    #courseGrid .card:hover,
+    #courseGrid .course-card:hover {
+      transform: translateY(-5px);
+      border-color: #0875f9 !important;
+    }
+
+    /* Makes text inside course cards readable */
+    #courseGrid .card p,
+    #courseGrid .card h1,
+    #courseGrid .card h2,
+    #courseGrid .card h3,
+    #courseGrid .card h4,
+    #courseGrid .card h5,
+    #courseGrid .course-card p,
+    #courseGrid .course-card h3 {
+      color: #ffffff;
+    }
+
+    /* Styles the empty search message */
+    #emptyMsg {
+      color: #91a4c3;
+      padding: 25px 0;
+    }
+
+    /* Adjusts the page for smaller screens */
+    @media (max-width: 991px) {
+      .navbar-nav {
+        padding-top: 20px;
+        gap: 8px;
+      }
+
+      .navbar-nav .nav-link.active::after {
+        display: none;
+      }
+
+      .navbar-collapse>.d-flex {
+        padding: 15px 0;
+      }
+
+      .page-heading {
+        letter-spacing: -1px;
+      }
+    }
+
+    /* Adjusts the logo and headings for phones */
+    @media (max-width: 576px) {
+      .navbar-brand {
+        font-size: 25px;
+      }
+
+      .logo-mark {
+        width: 46px;
+        height: 32px;
+      }
+
+      .page-description {
+        font-size: 16px;
+      }
+    }
+
+    /* Course card background */
+    .course-card {
+      background: #111f38 !important;
+      border: 1px solid #263b5c !important;
+      transition: 0.3s ease;
+    }
+
+    /* Course name */
+    .course-name {
+      color: #ffffff !important;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    /* Career routes and journey count */
+    .course-meta {
+      color: #b9c9df !important;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+
+    /* Course abbreviation circle */
+    .course-code {
+      width: 56px;
+      height: 56px;
+      min-width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #123d70;
+      color: #42c5ff !important;
+      border: 1px solid #2463a0;
+    }
+
+    /* Card hover effect */
+    .course-card:hover {
+      background: #172b49 !important;
+      border-color: #28b9f2 !important;
+      transform: translateY(-5px);
+    }
+  </style>
+</head>
+
+<body> <!-- Starts the visible page -->
+
+    <!-- STANDARDIZED NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-3" style="background: #050c19; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+        <div class="container" style="max-width: 1600px;">
+            
+            <!-- Left: Logo -->
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <!-- The exact SVG Icon from your image -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#28b9f2" style="width: 32px; height: 32px;">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                <!-- The TraceNG Text -->
+                <span style="color: #ffffff; font-weight: 800; font-size: 30px; letter-spacing: -1px;">
+                    Trace<span style="color: #28b9f2;">NG</span>
+                </span>
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Center: Links & Right: Buttons -->
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav mx-auto gap-lg-4 align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="journeys.html">Archive</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-3">
+                    <a href="auth.html?mode=login" class="nav-link" style="font-weight: 600; color: #cbd5e1;">Login</a>
+                    <a href="auth.html?mode=signup" class="btn get-started" style="background: #086bfa; color: #ffffff; border-radius: 12px; padding: 13px 24px; font-weight: 700;">Get Started &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+  <!-- Main page content -->
+  <main class="container py-5">
+
+    <!-- Introductory section -->
+    <section class="mb-5">
+
+      <!-- Small section label -->
+      <div class="section-label">EXPLORE YOUR OPTIONS</div>
+
+      <!-- Main heading -->
+      <h1 class="page-heading mb-3">
+        Your course is just the
+        <span class="heading-blue">beginning.</span>
+      </h1>
+
+      <!-- Supporting description -->
+      <p class="page-description mb-4">
+        Discover the career paths connected to what you studied.
+        Explore real graduate journeys, understand the skills required,
+        and see where your degree can take you.
+      </p>
+
+      <!-- Course and career search -->
+      <div class="row">
+        <div class="col-lg-8 col-xl-7">
+          <input id="searchBox" type="search" class="form-control form-control-lg"
+            placeholder="Search a course or a career...">
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Course cards generated by JavaScript -->
+    <section>
+      <div id="courseGrid" class="row g-4"></div>
+
+      <!-- Message shown when no course matches the search -->
+      <p id="emptyMsg" class="text-white-50 d-none">
+        No course matches that search yet.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Loads Bootstrap JavaScript for the mobile navbar -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Loads your existing course picker JavaScript -->
+  <script src="js/courses.js"></script>
+  
+
+</body>
+
+</html>

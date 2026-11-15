@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Career routes | TraceNG</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/transitions.css">
+
+    <style>
+        body {
+            background: #050c19;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background: #050c19;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar .container {
+            max-width: 1600px;
+        }
+
+        .navbar-brand {
+            color: #ffffff !important;
+            font-size: 30px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .brand-blue {
+            color: #28b9f2;
+        }
+
+        .nav-link {
+            color: #cbd5e1 !important;
+            font-size: 16px;
+            font-weight: 600;
+            position: relative;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #ffffff !important;
+        }
+
+        .nav-link.active::after {
+            content: "";
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background: #28b9f2;
+            border-radius: 50%;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .get-started {
+            background: #086bfa;
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            padding: 13px 24px;
+            font-weight: 700;
+            transition: background 0.2s ease;
+        }
+
+        .get-started:hover {
+            background: #0059d6;
+            color: #ffffff;
+        }
+
+        main {
+            max-width: 1500px !important;
+            min-height: 80vh;
+        }
+
+        .back-link {
+            color: #91a4c3;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: #28b9f2;
+        }
+
+        .section-label {
+            color: #28b9f2;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .section-label::before {
+            content: "";
+            width: 32px;
+            height: 2px;
+            background: #28b9f2;
+        }
+
+        #courseLabel {
+            color: #28b9f2 !important;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        #pageTitle {
+            color: #ffffff;
+            font-size: clamp(38px, 5vw, 60px);
+            font-weight: 800;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+
+        #pageSub {
+            color: #91a4c3 !important;
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 750px;
+        }
+
+        #routeGrid .card,
+        #organisationGrid .card {
+            background: #111f38 !important;
+            color: #ffffff !important;
+            border: 1px solid #263b5c !important;
+            border-radius: 18px !important;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        #routeGrid .card:hover,
+        #organisationGrid .card:hover {
+            transform: translateY(-5px);
+            border-color: #28b9f2 !important;
+        }
+
+        #routeGrid h1,
+        #routeGrid h2,
+        #routeGrid h3,
+        #routeGrid h4,
+        #routeGrid h5,
+        #organisationGrid h1,
+        #organisationGrid h2,
+        #organisationGrid h3,
+        #organisationGrid h4,
+        #organisationGrid h5 {
+            color: #ffffff !important;
+        }
+
+        #routeGrid p,
+        #organisationGrid p {
+            color: #cbd5e1;
+        }
+
+        #routeGrid a,
+        #organisationGrid a {
+            text-decoration: none;
+        }
+
+        .organisation-heading {
+            color: #ffffff;
+            font-size: 30px;
+            font-weight: 800;
+        }
+
+        .organisation-description {
+            color: #91a4c3;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .organisations-section {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 45px;
+        }
+
+        @media (max-width: 991px) {
+            .navbar-nav {
+                padding-top: 20px;
+                gap: 8px;
+            }
+
+            .navbar-nav .nav-link.active::after {
+                display: none;
+            }
+
+            #pageTitle {
+                letter-spacing: -1px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar-brand {
+                font-size: 25px;
+            }
+
+            #pageSub {
+                font-size: 16px;
+            }
+
+            .organisation-heading {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+     <!-- STANDARDIZED NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-3" style="background: #050c19; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+        <div class="container" style="max-width: 1600px;">
+            
+            <!-- Left: Logo -->
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <!-- The exact SVG Icon from your image -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#28b9f2" style="width: 32px; height: 32px;">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                <!-- The TraceNG Text -->
+                <span style="color: #ffffff; font-weight: 800; font-size: 30px; letter-spacing: -1px;">
+                    Trace<span style="color: #28b9f2;">NG</span>
+                </span>
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Center: Links & Right: Buttons -->
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav mx-auto gap-lg-4 align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link courses" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="journeys.html">Archive</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-3">
+                    <a href="auth.html?mode=login" class="nav-link" style="font-weight: 600; color: #cbd5e1;">Login</a>
+                    <a href="auth.html?mode=signup" class="btn get-started" style="background: #086bfa; color: #ffffff; border-radius: 12px; padding: 13px 24px; font-weight: 700;">Get Started &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+
+        <!-- PRELOADER SECTION -->
+        <div id="preloader" class="d-flex flex-column align-items-center justify-content-center text-center"
+            style="min-height: 50vh;">
+            <div class="spinner-border text-info mb-4" role="status"
+                style="width: 3rem; height: 3rem; border-width: 0.25em;"></div>
+            <h3 class="fw-bold mb-2">Mapping career paths...</h3>
+            <p class="text-white-50">Finding possible career directions for you.</p>
+        </div>
+
+        <!-- ACTUAL CONTENT (Hidden initially) -->
+        <div id="mainContent" class="d-none">
+            <a href="courses.html" class="back-link">&larr; All courses</a>
+
+            <section class="mt-4 mb-5">
+                <div class="section-label">EXPLORE CAREER POSSIBILITIES</div>
+                <p id="courseLabel" class="mb-2"></p>
+                <h1 class="fw-bold display-5 mb-3" id="pageTitle">Career routes</h1>
+                <p class="mb-4" id="pageSub"></p>
+            </section>
+
+            <section class="mb-5">
+                <div id="routeGrid" class="row g-4"></div>
+            </section>
+
+            <section class="organisations-section mt-5">
+                <h2 class="organisation-heading mb-2">Organisations to explore</h2>
+                <p class="organisation-description mb-4">
+                    Discover organisations where your knowledge and skills could be useful. Explore potential career
+                    destinations connected to your course.
+                </p>
+                <div class="row g-4" id="organisationGrid"></div>
+            </section>
+        </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/trans.js"></script>
+
+</body>
+
+</html>

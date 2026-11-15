@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TraceNG - Map Your Career Journey</title>
+   
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 0;
+            color: #1e293b;
+        }
+        /* Navigation Bar */
+        nav {
+            background-color: #ffffff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        nav .logo {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: #2563eb;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        nav .back-btn {
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #334155;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        nav .back-btn:hover {
+            background: #f1f5f9;
+        }
+        /* Container Card */
+        .container {
+            max-width: 680px;
+            margin: 40px auto 60px auto;
+            background: #ffffff;
+            padding: 40px 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e2e8f0;
+        }
+        .badge {
+            background-color: #eff6ff;
+            color: #2563eb;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 6px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+        h1 {
+            margin-top: 0;
+            font-size: 2.2rem;
+            color: #0f172a;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+        p.subtitle {
+            color: #64748b;
+            margin-bottom: 36px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0f172a;
+            border-left: 4px solid #2563eb;
+            padding-left: 10px;
+            margin: 32px 0 20px 0;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #334155;
+        }
+        label span {
+            color: #ef4444;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+            background-color: #fff;
+            color: #0f172a;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        input:focus, textarea:focus {
+            border-color: #2563eb;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        textarea {
+            resize: vertical;
+            height: 110px;
+        }
+        button[type="submit"] {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            transition: background-color 0.2s;
+        }
+        button[type="submit"]:hover {
+            background-color: #1d4ed8;
+        }
+        #response-message {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <a href="index.html" class="logo">TraceNG.</a>
+    <a href="index.html" class="back-btn">← Back to Home</a>
+</nav>
+
+<!-- Form Container -->
+<div class="container">
+    <div class="badge">Open Repository Contribution</div>
+    <h1>Map Your Career Journey</h1>
+    <p class="subtitle">Give Nigerian university students an unfiltered blueprint of how you transitioned from the classroom to your current reality.</p>
+
+    <form id="journeyForm">
+        
+        <!-- Section 1: Academic Roots -->
+        <div class="section-title">1. Academic Roots</div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label for="fullName">Your Name / Handle <span>*</span></label>
+                <input type="text" id="fullName" name="fullName" placeholder="e.g., Jane Doe or Anonymous" required>
+            </div>
+            <div class="form-group">
+                <label for="university">University Attended <span>*</span></label>
+                <input type="text" id="university" name="university" placeholder="e.g., University of Lagos" required>
+            </div>
+        </div>
+
+        <div class="form-group full-width">
+            <label for="courseStudied">Course Studied <span>*</span></label>
+            <input type="text" id="courseStudied" name="courseStudied" placeholder="e.g., Computer Science" required>
+        </div>
+
+        <!-- Section 2: Professional Reality -->
+        <div class="section-title">2. Professional Reality</div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="company">Company <span>*</span></label>
+                <input type="text" id="company" name="company" placeholder="e.g., Tech Corp" required>
+            </div>
+            <div class="form-group">
+                <label for="currentRole">Current Role <span>*</span></label>
+                <input type="text" id="currentRole" name="currentRole" placeholder="e.g., Full-Stack Developer" required>
+            </div>
+        </div>
+
+        <div class="form-group full-width">
+            <label for="biggestChallenge">Biggest Challenge <span>*</span></label>
+            <textarea id="biggestChallenge" name="biggestChallenge" placeholder="Describe a major hurdle you overcame..." required></textarea>
+        </div>
+
+        <div class="form-group full-width">
+            <label for="skillsAcquired">Skills Acquired <span>*</span></label>
+            <input type="text" id="skillsAcquired" name="skillsAcquired" placeholder="e.g., Python, Project Management, UI/UX Design" required>
+        </div>
+
+        <!-- Section 3: Reflections & Advice -->
+        <div class="section-title">3. Reflections & Advice</div>
+
+        <div class="form-group full-width">
+            <label for="wishKnownSooner">What Do You Wish You Had Known Sooner? <span>*</span></label>
+            <textarea id="wishKnownSooner" name="wishKnownSooner" placeholder="Looking back, what insights would have helped you earlier?" required></textarea>
+        </div>
+
+        <div class="form-group full-width">
+            <label for="bestAdvice">Best Advice <span>*</span></label>
+            <textarea id="bestAdvice" name="bestAdvice" placeholder="Share your core piece of advice for students..." required></textarea>
+        </div>
+
+        <button type="submit">Submit Your Journey</button>
+    </form>
+
+    <div id="response-message"></div>
+</div>
+
+<script>
+    const form = document.getElementById('journeyForm');
+    const responseMessage = document.getElementById('response-message');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const formData = {
+            fullName: document.getElementById('fullName').value,
+            university: document.getElementById('university').value,
+            courseStudied: document.getElementById('courseStudied').value,
+            company: document.getElementById('company').value,
+            currentRole: document.getElementById('currentRole').value,
+            biggestChallenge: document.getElementById('biggestChallenge').value,
+            skillsAcquired: document.getElementById('skillsAcquired').value,
+            wishKnownSooner: document.getElementById('wishKnownSooner').value,
+            bestAdvice: document.getElementById('bestAdvice').value,
+        };
+
+        try {
+            // FIX: Explicitly point to your Express backend on port 5000
+            const res = await fetch('http://127.0.0.1:5000/api/journeys', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+                responseMessage.style.color = '#16a34a';
+                responseMessage.textContent = 'Journey archived successfully!';
+                form.reset();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                responseMessage.style.color = '#dc2626';
+                responseMessage.textContent = 'Error: ' + (data.error || 'Something went wrong');
+            }
+        } catch (err) {
+            responseMessage.style.color = '#dc2626';
+            responseMessage.textContent = 'Server connection failed.';
+        }
+    });
+</script>
+
+</body>
+</html>

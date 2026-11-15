@@ -1,0 +1,120 @@
+{
+  "sample": false,
+  "courses": [
+    {
+      "id": "cs",
+      "name": "Computer Science",
+      "short": "CS",
+      "depth": "deep",
+      "routes": [
+        { "name": "Software Developer", "journeys": 45 },
+        { "name": "Data Analyst", "journeys": 30 },
+        { "name": "Frontend Engineer", "journeys": 28 },
+        { "name": "Backend Engineer", "journeys": 25 },
+        { "name": "Cybersecurity Analyst", "journeys": 22 },
+        { "name": "Product Manager", "journeys": 18 },
+        { "name": "DevOps Engineer", "journeys": 15 },
+        { "name": "UI/UX Designer", "journeys": 14 },
+        { "name": "Mobile App Developer", "journeys": 12 },
+        { "name": "Database Administrator", "journeys": 10 },
+        { "name": "Quality Assurance Engineer", "journeys": 9 },
+        { "name": "Systems Analyst", "journeys": 8 },
+        { "name": "Cloud Architect", "journeys": 7 },
+        { "name": "AI/Machine Learning Engineer", "journeys": 6 },
+        { "name": "IT Support Specialist", "journeys": 6 }
+      ]
+    },
+    {
+      "id": "accounting",
+      "name": "Accounting",
+      "short": "AC",
+      "depth": "deep",
+      "routes": [
+        { "name": "Auditor", "journeys": 40 },
+        { "name": "Financial Analyst", "journeys": 32 },
+        { "name": "Chartered Accountant", "journeys": 30 },
+        { "name": "Tax Consultant", "journeys": 25 },
+        { "name": "Bank Teller / Operations Officer", "journeys": 22 },
+        { "name": "Management Accountant", "journeys": 18 },
+        { "name": "Risk Analyst", "journeys": 15 },
+        { "name": "Budget Analyst", "journeys": 12 },
+        { "name": "Forensic Accountant", "journeys": 10 },
+        { "name": "Corporate Treasurer", "journeys": 8 },
+        { "name": "Payroll Specialist", "journeys": 8 },
+        { "name": "Investment Banker", "journeys": 7 },
+        { "name": "Compliance Officer", "journeys": 6 },
+        { "name": "Cost Accountant", "journeys": 5 },
+        { "name": "Accountant General Office Staff", "journeys": 4 }
+      ]
+    },
+    {
+      "id": "mass-comm",
+      "name": "Mass Communication",
+      "short": "MC",
+      "depth": "deep",
+      "routes": [
+        { "name": "Content and Brand Strategist", "journeys": 38 },
+        { "name": "Broadcast Journalist", "journeys": 30 },
+        { "name": "Public Relations Specialist", "journeys": 28 },
+        { "name": "Digital Marketer", "journeys": 25 },
+        { "name": "Corporate Communications Officer", "journeys": 22 },
+        { "name": "On-Air Personality (OAP)", "journeys": 20 },
+        { "name": "Copywriter", "journeys": 18 },
+        { "name": "Social Media Manager", "journeys": 16 },
+        { "name": "News Reporter", "journeys": 14 },
+        { "name": "TV/Video Producer", "journeys": 12 },
+        { "name": "Media Planner", "journeys": 10 },
+        { "name": "Editor / Copyeditor", "journeys": 9 },
+        { "name": "Documentary Filmmaker", "journeys": 7 },
+        { "name": "Advertising Executive", "journeys": 6 },
+        { "name": "Event Manager", "journeys": 5 }
+      ]
+    },
+    {
+      "id": "botany",
+      "name": "Botany",
+      "short": "BT",
+      "depth": "growing",
+      "routes": [
+        { "name": "Plant Research Officer", "journeys": 25 },
+        { "name": "Environmental Consultant", "journeys": 22 },
+        { "name": "Agricultural Extension Officer", "journeys": 20 },
+        { "name": "Horticulturist", "journeys": 18 },
+        { "name": "Forestry Officer", "journeys": 15 },
+        { "name": "Quality Control Inspector (Food/Drugs)", "journeys": 14 },
+        { "name": "Conservation Scientist", "journeys": 12 },
+        { "name": "Plant Pathologist", "journeys": 10 },
+        { "name": "Ecotourism Specialist", "journeys": 9 },
+        { "name": "Botanical Garden Curator", "journeys": 8 },
+        { "name": "Seed Technologist", "journeys": 7 },
+        { "name": "Herbal Medicine Researcher", "journeys": 6 },
+        { "name": "Biofuel Researcher", "journeys": 5 },
+        { "name": "Science Teacher / Lecturer", "journeys": 5 },
+        { "name": "Ecological Restoration Specialist", "journeys": 4 }
+      ]
+    },
+    {
+      "id": "physics",
+      "name": "Physics and Astronomy",
+      "short": "PA",
+      "depth": "growing",
+      "routes": [
+        { "name": "Agronomist", "journeys": 24 },
+        { "name": "Soil Survey Officer", "journeys": 22 },
+        { "name": "Data Scientist", "journeys": 20 },
+        { "name": "Geophysicist", "journeys": 18 },
+        { "name": "Renewable Energy Engineer", "journeys": 16 },
+        { "name": "Electronics Design Engineer", "journeys": 15 },
+        { "name": "Meteorologist", "journeys": 13 },
+        { "name": "Quality Assurance Analyst", "journeys": 11 },
+        { "name": "Research Scientist", "journeys": 10 },
+        { "name": "Medical Physicist", "journeys": 9 },
+        { "name": "Instrumentation Engineer", "journeys": 8 },
+        { "name": "Optical Engineer", "journeys": 7 },
+        { "name": "Science Communicator", "journeys": 6 },
+        { "name": "Patent Examiner", "journeys": 5 },
+        { "name": "Astronomy Educator", "journeys": 4 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+/* Global Page Transition Overlay */
+/* #page-loader {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #050c19;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+#page-loader.active {
+    opacity: 1;
+    pointer-events: auto;
+} */
+
+/* Loading dots on buttons */
+/* .btn.loading {
+    position: relative;
+    color: transparent !important;
+}
+.btn.loading::after {
+    content: "";
+    position: absolute;
+    width: 1rem; height: 1rem;
+    top: 50%; left: 50%;
+    margin: -0.5rem 0 0 -0.5rem;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } } */
